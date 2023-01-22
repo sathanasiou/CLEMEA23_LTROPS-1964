@@ -1,5 +1,5 @@
 devices:
-  nx-os1:
+  NX-OS-1:
     type: switch
     os: nxos
     credentials:
