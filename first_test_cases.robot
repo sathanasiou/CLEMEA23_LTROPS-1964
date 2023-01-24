@@ -2,8 +2,6 @@
 Library     CXTA
 Resource    cxta.robot
 
-Suite Setup    setup-my-environment
-
 *** Test Cases ***
 Verify CXTA
     ${version}=   CXTA Version

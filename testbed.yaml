@@ -55,3 +55,26 @@ devices:
       cli:
         protocol: ssh
         ip:  198.18.133.58          
+  NSO:
+    type: nso
+    os: nso
+    credentials:
+      default:
+        username: dcloud
+        password: C1sco12345
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip:  198.18.133.58
+        port: 2024
+        settings: 
+          IGNORE_CHATTY_TERM_OUTPUT: True
+      rest:
+        protocol: http
+        ip: 198.18.133.58
+        port: 8080
+        username: dcloud
+        password: C1sco12345      
