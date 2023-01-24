@@ -77,4 +77,19 @@ devices:
         ip: 198.18.133.58
         port: 8080
         username: dcloud
-        password: C1sco12345      
+        password: C1sco12345
+  apic1: 
+    type: apic
+    os: apic 
+    credentials: 
+      defaults: 
+        username: admin 
+        password: C1sco12345
+    connections: 
+      defaults: 
+        class: unicon.Unicon
+        via: cli
+      cli: 
+        protocol: ssh
+        ip: 198.18.133.200
+        port: 22
