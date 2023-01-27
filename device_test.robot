@@ -4,14 +4,15 @@ Resource   cxta.robot
 
 *** Variables ***
 ${testbed}  testbed.yaml
+${device_name}  XRv-1
 
 *** Test Cases ***
 Connect
     use testbed "${testbed}"
-    connect to device "XRv-1"
+    connect to device "${device_name}"
 
 Execute some commands
-    execute "show ip int brief" on device "R1"
-    select device "R1" using alias "default"
+    execute "show ip int brief" on device "${device_name}"
+    select device "${device_name}" using alias "default"
     execute "show version"
     execute "show ip protocols"
