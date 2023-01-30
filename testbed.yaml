@@ -27,7 +27,7 @@ devices:
       cli:
         protocol: ssh
         ip:  198.18.133.56
-  XRv-1:
+  iosxrv-1:
     type: router
     os: iosxr
     credentials:
@@ -41,7 +41,7 @@ devices:
       cli:
         protocol: ssh
         ip:  198.18.133.57    
-  IOS-XRv-2:
+  iosxrv-2:
     type: router
     os: iosxr
     credentials:

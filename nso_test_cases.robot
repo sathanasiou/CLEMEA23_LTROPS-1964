@@ -12,11 +12,11 @@ ${nso}        nso
 
 Test case 1
     Configure NSO with "services if-description Test1 device iosxrv-1 interface GigabitEthernet id 0/0/0/1 description Test1"
-    check command "show interfaces GigabitEthernet 0/0/0/1 description | include 0/0/0/1" from device "XRv-1" for regex "GigabitEthernet 0/0/0/1 Test1"
+    check command "show interfaces GigabitEthernet 0/0/0/1 description | include 0/0/0/1" from device "iosxrv-1" for regex "GigabitEthernet 0/0/0/1 Test1"
 
 Test case 2 - negative
     Configure NSO with "services if-description Test2 device iosxrv-2 interface GigabitEthernet id 0/0/0/2 description Test2"
-    check command "show interfaces GigabitEthernet 0/0/0/2 description | include 0/0/0/2" from device "IOS-XRv-2" for regex "GigabitEthernet 0/0/0/2 Test2"
+    check command "show interfaces GigabitEthernet 0/0/0/2 description | include 0/0/0/2" from device "iosxrv-2" for regex "GigabitEthernet 0/0/0/2 Test2"
 
 *** Keywords ***
 
