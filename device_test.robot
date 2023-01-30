@@ -3,8 +3,8 @@ Library    CXTA
 Resource   cxta.robot
 
 *** Variables ***
-${testbed}  testbed.yaml
-${device_name}  XRv-1
+${testbed}      testbed.yaml
+${device_name}  iosxrv-1
 
 *** Test Cases ***
 Connect

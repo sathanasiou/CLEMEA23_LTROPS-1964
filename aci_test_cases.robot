@@ -4,8 +4,8 @@ Resource   cxta.robot
 Suite Setup   setup-test
 
 *** Variables ***
-${testbed} testbed.yaml
-${apic}  apic1
+${testbed}   testbed.yaml
+${apic}      apic1
 
 *** Test Cases ***
 Verify in-band BD Configuration
