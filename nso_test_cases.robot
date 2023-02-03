@@ -22,7 +22,8 @@ NSO if-description Test case 2
     check command "show interfaces GigabitEthernet 0/0/0/2 description | include 0/0/0/2" from device "iosxrv-2" for regex "GigabitEthernet 0/0/0/2 Test2"
 
 NSO if-description Test case 3 - negative
-    Configure NSO with "services if-description Test2 device iosxrv-1 interface TenGigE id 1/0/0/1 description Test3"
+    Run Keyword and Expect Error    REGEXP: .*syntax error.*
+    ...    Configure NSO with "services if-description Test3 device iosxrv-1 interface TenGigE id 1/0/0/1 description Test3"
 
 *** Keywords ***
 
