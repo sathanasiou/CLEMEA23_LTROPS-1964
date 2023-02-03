@@ -23,7 +23,7 @@ NSO if-description Test case 2
 
 NSO if-description Test case 3 - negative
     Run Keyword and Expect Error    REGEXP: .*syntax error.*
-    ...    Configure NSO with "services if-description Test3 device iosxrv-1 interface TenGigE id 1/0/0/1 description Test3"
+    ...    Configure NSO with "services if-description Test3 device iosxrv-1 interface TenGigE id 3/0/0/3 description Test3"
 
 *** Keywords ***
 
