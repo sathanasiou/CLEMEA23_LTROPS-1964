@@ -7,6 +7,7 @@ ${testbed}      testbed.yaml
 ${iosxr01_device}  iosxrv-1
 ${iosxr02_device}  iosxrv-2
 ${iosxr_software_version}  7.3.2 
+${iosxr02_software_version}  7.3.3
 
 *** Test Cases ***
 Connect
@@ -31,6 +32,11 @@ Verify device software version for iosxr devices
 Verify device software version using Keyword
     Connect to device "${iosxr01_device}" and verify is running "${iosxr_software_version}"
     Connect to device "${iosxr02_device}" and verify is running "${iosxr_software_version}"
+
+# Negative test case scenario for device
+Verify device software version using Keyword
+    Connect to device "${iosxr01_device}" and verify is running "${iosxr_software_version}"
+    Connect to device "${iosxr02_device}" and verify is running "${iosxr02_software_version}"
 
 *** Keywords ***
 
