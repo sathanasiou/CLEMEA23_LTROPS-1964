@@ -48,7 +48,7 @@ Delete Tenant
     Should Contain  ${return}[1]  {"totalCount":"0","imdata":[]}
 
 Add vlan in nxos device
-    Add Vlans to Vlan Database in NX-OS or IOS   ${nxos01_device}   vlan 9-11
+    Add Vlan to Vlan Database in NX-OS or IOS   ${nxos01_device}   vlan 9-11
 
 ACI logout
     ACI REST logout on apic1
