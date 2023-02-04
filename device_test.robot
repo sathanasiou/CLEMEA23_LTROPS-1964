@@ -4,15 +4,25 @@ Resource   cxta.robot
 
 *** Variables ***
 ${testbed}      testbed.yaml
-${device_name}  iosxrv-1
+${iosxr01_device_name}  iosxrv-1
+${iosxr02_device_name}  iosxrv-2
+${iosxr_software_version}  7.3.2 
 
 *** Test Cases ***
 Connect
     use testbed "${testbed}"
-    connect to device "${device_name}"
+    connect to device "${iosxr01_device_name}"
 
-Execute some commands
-    execute "show ip int brief" on device "${device_name}"
-    select device "${device_name}" using alias "default"
+Execute some commands in iosxrv1 device
+    execute "show ip int brief" on device "${iosxr01_device_name}"
+    select device "${iosxr01_device_name}" using alias "default"
     execute "show version"
     execute "show ip protocols"
+
+Verify device software version for iosxr devices
+    execute "show version"
+    output contains "${iosxr_software_version}"
+
+
+    
+
