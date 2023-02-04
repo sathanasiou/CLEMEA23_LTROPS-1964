@@ -6,6 +6,7 @@ Suite Setup   setup-test
 *** Variables ***
 ${testbed}   testbed.yaml
 ${apic}      apic1
+${nxos01_device}    NX-OS-1
 
 *** Test Cases ***
 Verify in-band BD Configuration
@@ -40,6 +41,9 @@ Delete Tenant
     @{return}=  via ACI REST API configure device "${apic}" at URI "${uri}" using "json" payload "${payload}"
     Should Be Equal as Integers     ${return}[0]    200
     Should Contain  ${return}[1]  {"totalCount":"0","imdata":[]}
+
+Add vlan in nxos device
+    Add Vlan to Vlan Database in NX-OS or IOS   ${nxos01_device}   vlan 9,11
 
 ACI logout
     ACI REST logout on apic1
