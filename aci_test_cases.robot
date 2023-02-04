@@ -2,6 +2,7 @@
 Library    CXTA
 Resource   cxta.robot
 Suite Setup   setup-test
+Resource    community/generic.robot
 
 *** Variables ***
 ${testbed}   testbed.yaml
