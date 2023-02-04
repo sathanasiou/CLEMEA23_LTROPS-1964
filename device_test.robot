@@ -24,7 +24,8 @@ Execute some commands on iosxrv1 device
 
 Verify device software version for iosxr devices
     execute "show version"
-    parse "show version" using parser "show version" on device "${iosxr01_device}"
+    ${output}=  run "show version"
+    parse output "${output}" using genie parser "show version" on device "${iosxr01_device}"
     output contains "${iosxr_software_version}"
     execute "show version" on device "${iosxr02_device}"
     output contains "${iosxr_software_version}"
