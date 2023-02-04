@@ -28,6 +28,7 @@ Verify device software version for iosxr devices
     output contains "${iosxr_software_version}"
     execute "show version" on device "${iosxr02_device}"
     output contains "${iosxr_software_version}"
+    Verify Software Release ${iosxr01_device} ${iosxr_software_version}
 
 
 Verify device software version using Keyword
