@@ -12,7 +12,7 @@ ${iosxr_software_version}  7.3.2
 Connect
     use testbed "${testbed}"
     connect to device "${iosxr01_device_name}"
-    connect to device "${iosxr01_device_name}"
+    connect to device "${iosxr02_device_name}"
     
 
 Execute some commands in iosxrv1 device
