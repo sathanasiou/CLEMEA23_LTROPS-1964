@@ -49,7 +49,12 @@ Delete Tenant
 
 Add vlan in nxos device
     Add Vlan to Vlan Database in NX-OS or IOS   ${nxos01_device}   9-11
-    execute command "show vlan" on device "${nxos01_device}" and store in file "validation_files/vlan_config.txt"
+    execute command "show vlan" on device "${nxos01_device}" and store in file "configuration/vlan_config.txt"
+    compare config "validation_files/vlan_config.txt" to "configuration/vlan_config.txt"
+
+#Negative test case
+Verify vlan configuration
+    compare config "validation_files/vlan_config.txt" to "configuration/vlan_config_negative.txt"
 
 ACI logout
     ACI REST logout on apic1
