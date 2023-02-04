@@ -24,8 +24,6 @@ Execute some commands on iosxrv1 device
 
 Verify device software version for iosxr devices
     execute "show version"
-    ${output}=  run "show version"
-    parse output "${output}" using genie parser "show version" on device "${iosxr01_device}"
     output contains "${iosxr_software_version}"
     execute "show version" on device "${iosxr02_device}"
     output contains "${iosxr_software_version}"
@@ -37,6 +35,7 @@ Verify device software version using Keyword
 
 Send configuration to device using file
     execute commands from file "configuration/iosxr_configuration.txt" on device "${iosxr01_device}"
+    download running config as "configuration/running.txt"
     
 
 # Negative test case scenario for device
