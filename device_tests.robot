@@ -3,6 +3,8 @@ Library    CXTA
 Resource   cxta.robot
 Library  CXTA.robot.platforms.iosxr.config
 Resource    community/iosxr.robot
+Resource    community/generic.robot
+
 
 *** Variables ***
 ${testbed}      testbed.yaml
@@ -10,6 +12,7 @@ ${iosxr01_device}  iosxrv-1
 ${iosxr02_device}  iosxrv-2
 ${iosxr_software_version}  7.3.2 
 ${iosxr02_software_version}  7.3.3
+${nxos01_device}    NX-OS-1
 
 *** Test Cases ***
 Connect
@@ -48,6 +51,18 @@ Verify interface configuration
 Verify device software version using Keyword
     Connect to device "${iosxr01_device}" and verify is running "${iosxr_software_version}"
     Connect to device "${iosxr02_device}" and verify is running "${iosxr02_software_version}"
+
+### NX-OS test cases 
+
+Add vlan in nxos device
+    Add Vlan to Vlan Database in NX-OS or IOS   ${nxos01_device}   9-11
+    execute command "show vlan" on device "${nxos01_device}" and store in file "configuration/vlan_config.txt"
+    compare config "validation_files/vlan_config.txt" to "configuration/vlan_config.txt"
+
+#Negative test case
+Verify vlan configuration
+    compare config "validation_files/vlan_config.txt" to "configuration/vlan_config_negative.txt"
+
 
 *** Keywords ***
 

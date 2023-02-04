@@ -2,7 +2,6 @@
 Library    CXTA
 Resource   cxta.robot
 Suite Setup   setup-test
-Resource    community/generic.robot
 
 *** Variables ***
 ${testbed}   testbed.yaml
@@ -46,15 +45,6 @@ Delete Tenant
     @{return}=  via ACI REST API configure device "${apic}" at URI "${uri}" using "json" payload "${payload}"
     Should Be Equal as Integers     ${return}[0]    200
     Should Contain  ${return}[1]  {"totalCount":"0","imdata":[]}
-
-Add vlan in nxos device
-    Add Vlan to Vlan Database in NX-OS or IOS   ${nxos01_device}   9-11
-    execute command "show vlan" on device "${nxos01_device}" and store in file "configuration/vlan_config.txt"
-    compare config "validation_files/vlan_config.txt" to "configuration/vlan_config.txt"
-
-#Negative test case
-Verify vlan configuration
-    compare config "validation_files/vlan_config.txt" to "configuration/vlan_config_negative.txt"
 
 ACI logout
     ACI REST logout on apic1
