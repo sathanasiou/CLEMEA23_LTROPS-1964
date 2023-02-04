@@ -9,9 +9,6 @@ ${apic}      apic1
 ${nxos01_device}    NX-OS-1
 
 *** Test Cases ***
-Connect
-    use testbed "${testbed}"
-    connect to device "${nxos01_device}"
 
 Verify in-band BD Configuration
     ${tenant_name} =  Set Variable  mgmt

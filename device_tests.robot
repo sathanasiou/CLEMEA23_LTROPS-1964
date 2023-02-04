@@ -19,6 +19,7 @@ Connect
     use testbed "${testbed}"
     connect to device "${iosxr01_device}"
     connect to device "${iosxr02_device}"
+    connect to device "${nxos01_device}"
     
 Execute some commands on iosxrv1 device
     select device "${iosxr01_device}" using alias "default"
