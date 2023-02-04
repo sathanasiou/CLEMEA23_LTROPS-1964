@@ -22,13 +22,12 @@ Connect
     connect to device "${nxos01_device}"
     
 Execute some commands on iosxrv1 device
-    select device "${iosxr01_device}" using alias "default"
     execute "show ip int brief" on device "${iosxr01_device}"
     execute "show version"
     execute "show ip protocols"
 
 Verify device software version for iosxr devices
-    execute "show version"
+    execute "show version" on device "${iosxr01_device}"
     output contains "${iosxr_software_version}"
     execute "show version" on device "${iosxr02_device}"
     output contains "${iosxr_software_version}"
@@ -43,11 +42,10 @@ Verify software version using iosxr Keywords
 Send configuration to device using file
     execute commands from file "configuration/iosxr_configuration.txt" on device "${iosxr01_device}"
 
-Verify interface configuration
+Save device running config
     connect to device "${iosxr01_device}"
     download running config as "configuration/running.txt"
     
-
 # Negative test case scenario for iosxr device
 Verify device software version using Keyword
     Connect to device "${iosxr01_device}" and verify is running "${iosxr_software_version}"
@@ -55,14 +53,14 @@ Verify device software version using Keyword
 
 ### NX-OS test cases 
 
-Add vlan in nxos device
+Add vlan in nxos device and validate
     Add Vlan to Vlan Database in NX-OS or IOS   ${nxos01_device}   9-11
     execute command "show vlan" on device "${nxos01_device}" and store in file "configuration/vlan_config.txt"
     compare config "validation_files/vlan_config.txt" to "configuration/vlan_config.txt"
 
 #Negative test case
 Verify vlan configuration
-    compare config "validation_files/vlan_config.txt" to "configuration/vlan_config_negative.txt"
+    compare config "configuration/vlan_config.txt" to "validation_files/vlan_config_negative.txt"
 
 
 *** Keywords ***

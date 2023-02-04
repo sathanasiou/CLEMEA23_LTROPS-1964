@@ -1,0 +1,7 @@
+configure
+interface GigabitEthernet 0/0/0/1
+ipv4 address 10.10.10.1/24
+no shutdown
+commit
+exit 
+exit
