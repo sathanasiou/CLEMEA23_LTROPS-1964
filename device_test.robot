@@ -34,7 +34,7 @@ Verify device software version using Keyword
     Connect to device "${iosxr02_device}" and verify is running "${iosxr_software_version}"
 
 Send configuration to device using file
-    configure "configuration/iosxr_configuration/txt" on device "${iosxr01_device}"
+    execute commands from file "configuration/iosxr_configuration.txt" on device "${iosxr01_device}"
     
 
 # Negative test case scenario for device
