@@ -12,6 +12,8 @@ ${iosxr_software_version}  7.3.2
 Connect
     use testbed "${testbed}"
     connect to device "${iosxr01_device_name}"
+    connect to device "${iosxr01_device_name}"
+    
 
 Execute some commands in iosxrv1 device
     execute "show ip int brief" on device "${iosxr01_device_name}"
@@ -22,7 +24,6 @@ Execute some commands in iosxrv1 device
 Verify device software version for iosxr devices
     execute "show version"
     output contains "${iosxr_software_version}"
-    connect to device ${iosxr02_device_name} 
     execute "show ip int brief" on device "${iosxr02_device_name}"
     execute "show version"
     output contains "${iosxr_software_version}"
