@@ -1,6 +1,7 @@
 *** Settings ***
 Library    CXTA
 Resource   cxta.robot
+Library  CXTA.robot.platforms.iosxr.config
 
 *** Variables ***
 ${testbed}      testbed.yaml
