@@ -1,0 +1,29 @@
+devices:
+  NX-OS-1:
+    type: switch
+    os: nxos
+    credentials:
+      default:
+        username: admin
+        password: C1sco12345
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip:  198.18.133.55
+  iosxrv-1:
+    type: router
+    os: iosxr
+    credentials:
+      default:
+        username: admin
+        password: C1sco12345
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip:  198.18.133.57   
