@@ -37,21 +37,27 @@ Verify device software version for iosxr devices
     # execute "show version" on device "${iosxr02_device}"
     # output contains "${iosxr_software_version}"
 
-# Verify device software version using Keyword
-#     Connect to device "${iosxr01_device}" and verify is running "${iosxr_software_version}"
+#Delete
+Verify device software version using Keyword
+    Connect to device "${iosxr01_device}" and verify is running "${iosxr_software_version}"
 #     Connect to device "${iosxr02_device}" and verify is running "${iosxr_software_version}"
 
-# Verify software version using iosxr Keywords
-#     Verify Software Release  ${iosxr01_device}  ${iosxr_software_version}
+#Delete
+Verify software version using iosxr Keywords
+    Verify Software Release  ${iosxr01_device}  ${iosxr_software_version}
 
 ## Negative Test Cases
 Verify device software version using Keyword
+    continue on failure enabled
     Connect to device "${iosxr01_device}" and verify is running "${iosxr_software_version}"
     Connect to device "${iosxr02_device}" and verify is running "${iosxr02_software_version}"
 
+Verify vlan configuration
+    compare config "validation_files/vlan_config_negative.txt" to "configuration/vlan_config.txt"
+
 *** Keywords ***
 
-# Connect to device "${device_name}" and verify is running "${software_version}"
-#     connect to device "${device_name}"
-#     execute "show version" on device "${device_name}"
-#     output contains "${software_version}"
+Connect to device "${device_name}" and verify is running "${software_version}"
+    connect to device "${device_name}"
+    execute "show version" on device "${device_name}"
+    output contains "${software_version}"
