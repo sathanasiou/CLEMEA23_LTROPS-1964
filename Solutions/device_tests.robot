@@ -23,8 +23,8 @@ Connect
     
 Execute some commands on iosxrv1 device
     execute "show ip int brief" on device "${iosxr01_device}"
-    execute "show version"
-    execute "show ip protocols"
+    execute "show version" on device "${iosxr01_device}"
+    execute "show ip protocols" on device "${iosxr01_device}"
 
 Verify device software version for iosxr devices
     execute "show version" on device "${iosxr01_device}"
