@@ -27,26 +27,3 @@ devices:
       cli:
         protocol: ssh
         ip:  198.18.133.57   
-  apic1: 
-    type: apic
-    os: apic 
-    credentials: 
-      default: 
-        username: admin 
-        password: C1sco12345
-    connections: 
-      defaults: 
-        class: unicon.Unicon
-        via: cli
-      cli: 
-        protocol: ssh
-        ip: 198.18.133.200
-        port: 22
-        username: admin 
-        password: C1sco12345
-      rest:
-        protocol: https
-        ip: 198.18.133.200
-        port: 443
-        username: admin
-        password: C1sco12345
