@@ -1,7 +1,7 @@
-device_logs
+.DS_Store
+device_logs/
 diagnostics.log
 installed_packages.txt
 log.html
 output.xml
 report.html
-.DS_Store
