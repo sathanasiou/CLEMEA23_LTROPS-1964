@@ -13,6 +13,20 @@ devices:
       cli:
         protocol: ssh
         ip:  198.18.133.55
+  NX-OS-2:
+    type: switch
+    os: nxos
+    credentials:
+      default:
+        username: admin
+        password: C1sco12345
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip:  198.18.133.56
   iosxrv-1:
     type: router
     os: iosxr
@@ -26,4 +40,64 @@ devices:
         via: cli
       cli:
         protocol: ssh
-        ip:  198.18.133.57   
+        ip:  198.18.133.57    
+  iosxrv-2:
+    type: router
+    os: iosxr
+    credentials:
+      default:
+        username: admin
+        password: C1sco12345
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip:  198.18.133.58          
+  nso:
+    type: nso
+    os: nso
+    credentials:
+      default:
+        username: dcloud
+        password: C1sco12345
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: ssh
+        ip:  198.18.133.100
+        port: 2024
+        settings: 
+          IGNORE_CHATTY_TERM_OUTPUT: True
+      rest:
+        protocol: http
+        ip: 198.18.133.100
+        port: 8080
+        username: dcloud
+        password: C1sco12345
+  apic1: 
+    type: apic
+    os: apic 
+    credentials: 
+      default: 
+        username: admin 
+        password: C1sco12345
+    connections: 
+      defaults: 
+        class: unicon.Unicon
+        via: cli
+      cli: 
+        protocol: ssh
+        ip: 198.18.133.200
+        port: 22
+        username: admin 
+        password: C1sco12345
+      rest:
+        protocol: https
+        ip: 198.18.133.200
+        port: 443
+        username: admin
+        password: C1sco12345
