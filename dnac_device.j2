@@ -1,0 +1,23 @@
+{% for dev in devices %}
+{{dev.hostname}}:
+  alias: {{ dev.id }}
+  os: iosxe
+  custom:
+    categories:
+    - ios
+    - xe
+    abstraction:
+      order: [os, platform]
+  credentials:
+    default:
+      username: smon-cxtm
+      password: "%ENV{SMON_CXTM_PW}"
+  connections:
+    defaults:
+      class: unicon.Unicon
+      via: cli
+    cli:
+      ip: {{ dev.managementIpAddress }}
+      protocol: ssh
+      ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+{% endfor %}

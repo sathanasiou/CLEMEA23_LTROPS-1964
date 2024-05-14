@@ -1,0 +1,20 @@
+testbed: 
+ custom:
+    dnac_device_template:
+      os: anything
+      type: something
+      credentials:
+        default:
+          username: ssh_username
+          password: ssh_password
+        # The enable section is optional
+        enable:
+          password: ssh_enable_password
+      connections:
+        defaults:
+          class: unicon.Unicon
+          via: cli
+        cli:
+          ip: anything
+          protocol: ssh
+          ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null

@@ -101,3 +101,16 @@ devices:
         port: 443
         username: admin
         password: C1sco12345
+  DNAC_server:
+      connections:
+        defaults:
+           class: CXTA.core.connectors.rest.RestConnection
+        rest:
+          address:  sandboxdnac2.cisco.com
+          username: devnetuser
+          password: Cisco123!
+          port: 443
+          protocol: https
+          verify: False
+      type: switch
+      os: None
