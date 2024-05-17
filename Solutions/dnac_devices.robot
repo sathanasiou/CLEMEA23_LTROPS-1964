@@ -21,7 +21,7 @@ connect to DNAC and add devices to testbed
     RETURN    @{devices}  
  
 *** Test Cases ***
-Test keyword 
+Add devices into testbed
     use testbed "${testbed}"
     connect to DNAC and add devices to testbed   ${dnac}
     
